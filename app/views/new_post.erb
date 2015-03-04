@@ -1,0 +1,29 @@
+<div class="container" >
+  <div class="container">
+    <CAPTION><EM><h1>
+    New Posting
+      </h1></EM></CAPTION>
+
+
+  <form id="new_post" action = "/post_complete" method="POST">
+    Title: &nbsp;&nbsp; <input type="text" name="title"></br>
+    Body: &nbsp;&nbsp; <textarea cols="40" rows="5" name="body"></textarea></br></br>
+    Image Link: &nbsp;&nbsp; <input type="text" name="img_link"></br>
+    Location: &nbsp;&nbsp; <input type="text" name="location"></br>
+    Email: &nbsp;&nbsp; <input type="text" name="email"></br>
+    Phone Number: &nbsp;&nbsp; <input type="text" name="phone"></br>
+
+    Category: &nbsp;&nbsp; <select name = "category">
+    <% @category.each do |elem| %>
+      <option>
+        <%= elem.name %>
+      </option>
+    <% end %>
+    </select>
+    </br>
+    <div class="btn-group btn-custom">
+        <button class="btn">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

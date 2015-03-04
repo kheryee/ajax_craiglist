@@ -1,0 +1,54 @@
+<div class="container">
+	<CAPTION><EM><h1>Edit Page</h1></EM></CAPTION>
+
+	<% if @update %>
+		<p>
+			<h5 class = "updated">
+			<%= @update %>
+			</h5>
+		</p>
+	<% end %>
+
+	  <form id="update_post" action = "/edit" method="POST">
+
+	  Post ID: &nbsp;&nbsp; <select name = "id">
+	  	<option selected = "selected">
+	  		<%= @post.id %>
+	  	</option>
+	  </select>
+		</br>
+		</br>
+
+    Title: &nbsp;&nbsp; <input type="text" name="title"
+    value = <%= @post.title %>>
+  	</br>
+    Body: &nbsp;&nbsp; <textarea cols="40" rows="5" name="body" ><%= @post.body %></textarea></br></br>
+
+    Image Link: &nbsp;&nbsp; <input type="text" name="img_link" value = <%= @post.img_link %>></br>
+
+    Location: &nbsp;&nbsp; <input type="text" name="location" value = <%= @post.location %>></br>
+
+    Email: &nbsp;&nbsp; <input type="text" name="email" value = <%= @post.email %>></br>
+
+    Phone Number: &nbsp;&nbsp; <input type="text" name="phone" value = <%= @post.phone %>></br>
+
+    Category: &nbsp;&nbsp; <select name = "category">
+    <% @category.each do |elem| %>
+	    <% if elem == @post.category %>
+	    	<option selected = "selected">
+	        <%= elem.name %>
+	      </option>
+	     <% else %>
+		      <option>
+		        <%= elem.name %>
+		      </option>
+      <%end %>
+    <% end %>
+    </select>
+    </br>
+    <div class="btn-group btn-custom">
+        <button class="btn">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

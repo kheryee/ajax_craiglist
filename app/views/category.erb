@@ -1,0 +1,11 @@
+<div class="container">
+  <CAPTION><EM><h1>
+    <%= @category_name.capitalize %>
+  </h1></EM></CAPTION>
+
+  <% @posts.each do |elem| %>
+  <a class="post_name" href= /<%= @category.id %>/<%= elem.id %>>
+     <%= elem.title %>
+    </a><br>
+    <% end %>
+</div>

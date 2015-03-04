@@ -1,0 +1,10 @@
+<div class="container">
+  <CAPTION><EM><h1>Categories</h1></EM></CAPTION>
+  <% @category.each do |elem| %>
+    <a class="category_name" href = /<%= elem.id %>>
+    <p>
+     <%= elem.name %>
+    </p>
+  </a>
+  <% end %>
+</div>
